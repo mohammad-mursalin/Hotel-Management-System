@@ -32,13 +32,17 @@ public class Booking {
 
     @Min(value = 0, message = "number of children can not be less than 0")
     private int numOfChildren;
+
     private int totalNumOfGuest;
+
     private String bookingConfirmationCode;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id")
     private User user;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "room_id")
     private Room room;
 
     public void calculateTotalNumOfGuest() {
