@@ -5,7 +5,9 @@ import com.mursalin.hotel.management.system.repository.UserRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
 
+@Service
 public class MyUserDetailsService implements UserDetailsService {
 
     private UserRepository userRepo;
